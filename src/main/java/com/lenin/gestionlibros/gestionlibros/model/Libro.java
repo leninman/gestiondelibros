@@ -1,6 +1,12 @@
 package com.lenin.gestionlibros.gestionlibros.model;
 
+
+
+
+
+
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name="Libros")
@@ -10,14 +16,16 @@ public class Libro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idLibro;
 
+    @NotEmpty
     private String isbn;
 
+    @NotEmpty
     private String titulo;
-
+    @NotEmpty
     private String autor;
-
+    @NotEmpty
     private Integer numPaginas;
-
+    @NotEmpty
     private String editorial;
 
     public Libro() {
@@ -39,6 +47,7 @@ public class Libro {
     public void setIdLibro(Long idLibro) {
         this.idLibro = idLibro;
     }
+
 
     public String getIsbn() {
         return isbn;
